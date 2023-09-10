@@ -1,0 +1,8 @@
+.per-card{
+    background: #24272C;
+    width: 40%;
+    min-height: 400px;
+    margin: 20px auto;
+    border-radius: 10px;
+    color: white;
+}

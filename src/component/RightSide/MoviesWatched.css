@@ -1,0 +1,19 @@
+.movies-watched-container{
+    height: 100px;
+    background: #252D31;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+}
+.movies-watched-container .info{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.movies-watched-container .movies-count{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 5px;
+}

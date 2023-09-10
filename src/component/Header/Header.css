@@ -1,0 +1,36 @@
+.header-container{
+    height: 70px;
+    background-color: #5C38D3;
+    border-radius: 10px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    align-items: center;
+    margin-top: 7px;
+}
+.header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.header-logo img{
+    width: 30px;
+}
+.header-logo p{
+    text-align: center;
+    margin-top: 20px;
+}
+.header-container input{
+    width: 300px;
+    height: 70%;
+    border-radius: 6px;
+    border: none;
+    background: #6B45F3;
+    color: white;
+    padding: 10px;
+}
+.header-container p{
+    margin-top: 10px;
+}
