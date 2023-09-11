@@ -1,0 +1,33 @@
+.poster-container{
+    display: flex;
+    gap: 20px;
+    background: #273034;
+}
+.poster-container img{
+    width: 120px;
+    height: 180px;
+}
+.rating-container{
+    height: 100px;
+    background: #273034;
+    width: 80%;
+    margin: 35px auto;
+    border-radius: 10PX;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rating-container button{
+    width: 80%;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background: #5C38D3;
+}
+.movie-details-info{
+    padding: 20px;
+}

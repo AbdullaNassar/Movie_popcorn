@@ -2,7 +2,11 @@
     display: flex;
     gap: 10px;
     height: 100px;
+    cursor: pointer;
     /* padding: 20px; */
+}
+.movie-container:hover{
+    background-color: #252D31;
 }
 .movie-container img{
     width: 40px;
