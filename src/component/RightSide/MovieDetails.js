@@ -1,25 +1,37 @@
+import { useEffect,useState } from "react";
 import "./MovieDetails.css"
-function MovieDetails(){
+function MovieDetails({id,addtolist}){
+    const[data, setData]=useState([]);
+    useEffect(function(){
+        async function fetchData(){
+            let res= await fetch(`https://www.omdbapi.com/?apikey=480f6201&i=${id}`);
+            let dataRes= await res.json();
+            // console.log(dataRes);
+            setData(dataRes);
+        }
+        fetchData();
+    },[id])
+
     return(
         <div>
             <div className="poster-container">
-                <img src="https://tse2.explicit.bing.net/th?id=OIP.G-2Q6Qo4uqjpTCd07OXTYgHaK-&pid=Api&P=0&h=180"/>
+                <img src={data.Poster}/>
                 <div>
-                    <h2>Intrestaller</h2>
-                    <p>03 july 2002. 116 min</p>
-                    <p>Adventure, comedy, sci-fu</p>
-                    <p>⭐ 8.5 IMDB rating</p>
+                    <h2>{data.Title}</h2>
+                    <p>{data.Released}. {data.Runtime} min</p>
+                    <p>{data.Genre}</p>
+                    <p>⭐{data.imdbRating} IMDB rating</p>
                 </div>
             </div>
             <div className="rating-container">
                 <span>⭐⭐⭐⭐⭐7</span>
-                <button>+Add to list</button>
+                <button onClick={()=>{
+                    console.log('here');
+                    addtolist(id);
+                }}>+Add to list</button>
             </div>
             <div className="movie-details-info">
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                </p>
+                <p>{data.Plot}</p>
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import "./Header.css"
-function Header({value,onChange}){
+function Header({value,onChange,num}){
     return(
         <div className="header-container">
             <div className="header-logo">
@@ -7,7 +7,7 @@ function Header({value,onChange}){
                 <p>Movie popcorn</p>
             </div>
             <input value={value} onChange={onChange} type="search" />
-            <p>Found 10 results</p>
+            <p>Found {num} results</p>
         </div>
     );
 }

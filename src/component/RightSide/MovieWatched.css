@@ -1,0 +1,21 @@
+.movie2-container{
+    display: flex;
+    gap: 10px;
+    height: 100px;
+    /* cursor: pointer; */
+    padding: 20px;
+}
+.movie2-container:hover{
+    background-color: #252D31;
+}
+.movie2-container img{
+    width: 40px;
+    height: 60px;
+}
+.movie2-inside span{
+    color: red;
+    margin-left: 10px;
+}
+.movie2-inside span:hover{
+    cursor: pointer;
+}
