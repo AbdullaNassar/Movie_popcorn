@@ -6,6 +6,7 @@ import MovieList from './component/leftSide/MovieList';
 import MoviesWatched from './component/RightSide/MoviesWatched';
 import MovieDetails from './component/RightSide/MovieDetails';
 import MovieWatchedlist from './component/RightSide/MovieWatchedlist';
+import Currency from './Currency';
 // https://www.omdbapi.com/?apikey=480f6201&s=test
 function App() {
   const [query,setQuery]=useState('');
@@ -15,6 +16,18 @@ function App() {
   const[selectedID,setSelectedID]=useState(null);
   const[numResult, setNumResult]=useState(0);
   const[numberOfWatchedMovies, setNumberOfWatchedMovies]=useState([]);
+  
+  useEffect(() => {
+    // Retrieve the value from local storage
+    const storedList = localStorage.getItem('watched');
+
+    // Check if a value exists in local storage
+    if (storedList) {
+      // Parse the retrieved value into an array
+      const parsedList = JSON.parse(storedList);
+      setNumberOfWatchedMovies(parsedList);
+    }
+  }, []);
 
   function addNewWatchedMovie(id){
     setNumberOfWatchedMovies((items)=>[...items,id]);
@@ -39,11 +52,10 @@ function App() {
     )
   }
   return (
-    // Header 
+    <>
+    
     <div className='app'>
     <Header num={numResult} onChange={(e)=>{setQuery(e.target.value);}}/>
-
-
     <div style={{display:"flex"}}>
       {/* left side */}
     <Card>
@@ -62,6 +74,8 @@ function App() {
     </Card>
     </div>
     </div>
+
+    </>
    
   );
 }
